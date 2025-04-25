@@ -13,48 +13,6 @@ t
 ​
   and 
 𝑌
-𝑡
-Y 
-t
-,
-.
-.
-.
-,
-𝑋
-𝑡
-−
-𝑝
-)
-Var(Y 
-t
-​
- ∣Y 
-t−1
-​
- ,...,Y 
-t−p
-​
- )>Var(Y 
-t
-​
- ∣Y 
-t−1
-​
- ,...,Y 
-t−p
-​
- ,X 
-t−1
-​
- ,...,X 
-t−p
-​
- )
-If including past values of 
-𝑋
-X improves the prediction of 
-𝑌
 Y, then 
 𝑋
 X is said to Granger-cause 
