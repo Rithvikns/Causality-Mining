@@ -16,42 +16,6 @@ t
 Y, then 
 𝑋
 X is said to Granger-cause 
-𝑌
-Y.
-
-🧪 Implementation Steps
-Prepare the data: Ensure stationarity using techniques like differencing.
-
-Select lag length: Use AIC/BIC to choose optimal lag.
-
-Fit VAR model (Vector Autoregression).
-
-Perform Granger Causality Test: Use F-tests or chi-square to assess significance.
-
-In Python, using statsmodels:
-
-python
-Copy
-Edit
-from statsmodels.tsa.stattools import grangercausalitytests
-
-# Perform Granger Causality test
-results = grangercausalitytests(data[['Y', 'X']], maxlag=4, verbose=True)
-💡 Use in Causality Mining
-Granger Causality is used in causality mining pipelines for:
-
-Time Series Causal Discovery: Identifying directional dependencies.
-
-Event Log Analysis: Understanding sequences in logs (e.g., business processes).
-
-Root Cause Analysis: Pinpointing drivers behind anomalies or events.
-
-📌 Limitations
-Assumes linearity.
-
-Sensitive to non-stationarity.
-
-Cannot detect instantaneous causality.
 
 Only applicable to time series data.
 
