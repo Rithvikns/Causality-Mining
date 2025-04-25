@@ -71,14 +71,43 @@ Granger Causality is widely used in:
 - Statsmodels Documentation: https://www.statsmodels.org/
 - Tigramite: https://jakobrunge.github.io/tigramite/
 
-💻 Demonstration Code (Google Colab Ready)
+# 💻 Demonstration Code (Google Colab Ready)
 
 The following code demonstrates Granger Causality using synthetic data.
-
+```python
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from statsmodels.tsa.stattools import grangercausalitytests, adfuller
+
+# Step 1: Generate synthetic data
+np.random.seed(42)
+n = 200
+X = np.random.normal(size=n)
+Y = np.zeros(n)
+for t in range(2, n):
+    Y[t] = 0.5 * Y[t-1] + 0.4 * X[t-2] + np.random.normal()
+data = pd.DataFrame({'Y': Y, 'X': X})
+
+# Step 2: Visualize the time series
+data.plot(title='Synthetic Time Series: X and Y')
+plt.xlabel("Time")
+plt.ylabel("Value")
+plt.show()
+
+# Step 3: Test for stationarity using ADF
+print("\n== ADF Test ==")
+def adf_test(series, name):
+    result = adfuller(series)
+    print(f'ADF Statistic for {name}: {result[0]:.3f}')
+    print(f'p-value: {result[1]:.3f}\n')
+adf_test(data['X'], 'X')
+adf_test(data['Y'], 'Y')
+
+# Step 4: Perform Granger Causality Test
+print("\n== Granger Causality Test ==")
+grangercausalitytests(data[['Y', 'X']], maxlag=4, verbose=True)
+```
 
 # Step 1: Generate synthetic data
 np.random.seed(42)
