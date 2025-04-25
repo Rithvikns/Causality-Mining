@@ -9,27 +9,3 @@ Given two time series,
 𝑋
 𝑡
 X 
-t
-​
-  and 
-𝑌
-Y, then 
-𝑋
-X is said to Granger-cause 
-
-Only applicable to time series data.
-
-🔧 Tools/Libraries
-statsmodels: Built-in Granger Causality testing.
-
-causal-learn: For more general causal discovery.
-
-Tigramite: Advanced time-series causality analysis using PCMCI and other techniques.
-
-📚 References
-Granger, C. W. J. (1969). “Investigating Causal Relations by Econometric Models and Cross-spectral Methods”.
-
-Statsmodels Documentation
-
-Tigramite Causal Discovery Library
-
